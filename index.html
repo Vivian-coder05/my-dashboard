@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">DevDash</div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h1 id="pageTitle">Welcome Back, Developer!</h1>
+            
+            <div id="mainDashboardView">
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Total Projects</h3>
+                        <p class="stat-number" id="projectCount">12</p>
+                    </div>
+                    <div class="card">
+                        <h3>Hours Coded</h3>
+                        <p class="stat-number">148</p>
+                    </div>
+                    <div class="card">
+                        <h3>Tasks Complete</h3>
+                        <p class="stat-number">85%</p>
+                    </div>
+                </div>
+
+                <div class="interactive-section">
+                    <h2>Quick Add Project</h2>
+                    <div class="form-group">
+                        <input type="text" id="projectInput" placeholder="Enter project name...">
+                        <button id="addProjectBtn">Add Project</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dynamicContentView" style="display: none;">
+                <p id="pageDescription">Select a tab from the menu.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

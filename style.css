@@ -1,0 +1,152 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #1e293b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Layout container using Flexbox */
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 54px);
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 240px;
+    background-color: #0f172a;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: #94a3b8;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #334155;
+    color: white;
+}
+
+/* Main content styling */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.content h1 {
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+/* Responsive Grid layout for cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-top: 10px;
+}
+
+/* Form layout */
+.interactive-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* 📱 RESPONSIVE MEDIA QUERY (For Screens smaller than 768px) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack sidebar on top of content */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu button */
+    }
+
+    .sidebar {
+        width: 100%;
+        display: none; /* Hide sidebar by default on mobile */
+    }
+
+    .sidebar.active {
+        display: block; /* Show sidebar when toggled via JS */
+    }
+    
+    .form-group {
+        flex-direction: column; /* Stack input and button on mobile */
+    }
+}
